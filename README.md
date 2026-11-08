@@ -56,14 +56,18 @@
 
 ## Installation
 
-Clone the repository and copy the themes into bat's config directory:
+Clone the repository and run the install script. It copies the themes into bat's
+config directory and rebuilds bat's cache:
 
 ```sh
 git clone https://github.com/kanagawa-community/bat
-mkdir -p "$(bat --config-dir)/themes"
-cp bat/themes/*.tmTheme "$(bat --config-dir)/themes/"
-bat cache --build
+cd bat
+./install.sh
 ```
+
+`./install.sh` installs all three variants. Name the ones you want instead, for
+example `./install.sh dragon lotus`. Run it again after `git pull` to update.
+`./uninstall.sh` takes the same names and removes them.
 
 Check that bat found them with `bat --list-themes | grep kanagawa`.
 
